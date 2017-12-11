@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Calendars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>Host</th>
+      <th>Activities</th>
+      <th>Address</th>
+      <th>Zipcode</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calendars.each do |calendar| %>
+      <tr>
+        <td><%= calendar.event %></td>
+        <td><%= calendar.host %></td>
+        <td><%= calendar.activities %></td>
+        <td><%= calendar.address %></td>
+        <td><%= calendar.zipcode %></td>
+        <td><%= calendar.start_time %></td>
+        <td><%= calendar.end_time %></td>
+        <td><%= link_to 'Show', calendar %></td>
+        <td><%= link_to 'Edit', edit_calendar_path(calendar) %></td>
+        <td><%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Calendar', new_calendar_path %>

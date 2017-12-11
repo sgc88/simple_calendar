@@ -1,0 +1,4 @@
+class MonthCalendarController < ApplicationController
+
+
+end
